@@ -154,8 +154,8 @@ public class ResourceCentreTest {
 		assertFalse("Test that un-available item is NOT ok to loan?", ok);
 		
 		//error condition
-		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0013", "8-8-2020" );
-		assertFalse("Test that non-esiting item is NOT ok to loan?", ok);
+			ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0013", "8-8-2020" );
+			assertFalse("Test that non-esiting item is NOT ok to loan?", ok);
 
 
 	}
@@ -182,7 +182,7 @@ public class ResourceCentreTest {
 				
 				//error condition
 				ResourceCentre.addChromebook(chromebookList, cb2);	
-				cb2.setIsAvailable(false);
+				cb	2.setIsAvailable(false);
 				ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
 				assertFalse("Test that un-available item is NOT ok to loan?", ok);
 				
@@ -224,10 +224,10 @@ public class ResourceCentreTest {
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
-		assertTrue("Test if loaned out amcorder CB0012 is returned- true", isReturned);
+		assertTrue("Test if loaned out chromebook CB0012 is returned- true", isReturned);
 		//error
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
-		assertFalse("Test if non-existing amcorder CB0013 is returned - false?", isReturned);
+		assertFalse("Test if non-existing chromebook CB0013 is returned - false?", isReturned);
 	}
 	
 	@After
